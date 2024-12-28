@@ -1,0 +1,26 @@
+---
+title: "Congressional API Exploration"
+output: html_notebook
+---
+```{r}
+library(httr)
+library(jsonlite)
+library(dplyr)
+library(tidyr)
+library(purrr)
+library(lubridate)
+library(broom)
+library(ggplot2)
+library(dotenv)
+load_dot_env(file = ".env")
+
+API_KEY <- Sys.getenv("API_KEY")
+source("functions/fetch_congress_data.R")
+
+```
+
+```{r}
+
+fetch_congress_data("/member/congress/118")
+
+```
